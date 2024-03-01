@@ -11,6 +11,8 @@
 	const { fullUrl } = defineProps<Props>();
 
 	const validateLongUrlLength = computed(() => {
-		return fullUrl.length > 50 ? fullUrl.slice(0, 50) + '...' : fullUrl;
+		if (fullUrl) {
+			return fullUrl.length > 50 ? fullUrl.slice(0, 50) + '...' : fullUrl;
+		}
 	});
 </script>
