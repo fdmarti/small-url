@@ -1,4 +1,4 @@
-import { UrlModel } from "~/server/data/mongo/models/url.model";
+import { UrlModel } from '~/server/data/mongo/models/url.model';
 
 export default defineEventHandler(async (event) => {
 	const shortUrl = getRouterParam(event, 'id');
@@ -6,6 +6,8 @@ export default defineEventHandler(async (event) => {
 
 	if (fullUrlData) {
 		sendRedirect(event, fullUrlData.fullUrl!);
+	} else {
+		sendRedirect(event, '/');
 	}
 
 	return {

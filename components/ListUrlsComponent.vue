@@ -6,20 +6,9 @@
 				class="bg-gray-100 p-4 rounded flex justify-between"
 				v-for="url in urlsList"
 			>
-				<div class="max-w-[500px]">
-					<a :href="url.fullUrl" target="_blank">{{ url.fullUrl }}</a>
-				</div>
-				<div class="flex gap-3 items-center">
-					<a
-						:href="`url/${url.shortUrl}`"
-						target="_blank"
-						@click="copyURI"
-						class="font-bold hover:opacity-70 hover:text-green-700"
-					>
-						{{ url.shortUrl }}
-					</a>
-					<IconsCheck v-if="hasCopied" />
-				</div>
+				<FullLinkComponent :fullUrl="url.fullUrl" />
+				<ShortLinkComponent :shortUrl="url.shortUrl" />
+
 				<section>
 					<IconsTrash
 						@click="handleDeleteUrl(url.shortUrl)"
@@ -31,10 +20,9 @@
 	</div>
 </template>
 <script setup lang="ts">
-	import { useUrlShortener, useCopy } from '../composable';
+	import { useUrlShortener } from '../composable';
 
 	const { handleDeleteUrl, loadUrls, urlsList, isLoading } = useUrlShortener();
-	const { copyURI, hasCopied } = useCopy();
 
 	onBeforeMount(() => {
 		loadUrls();

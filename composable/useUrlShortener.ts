@@ -54,6 +54,7 @@ export const useUrlShortener = () => {
 		handleSubmitForm,
 		handleDeleteUrl,
 		loadUrls,
+		forceReRenderList,
 
 		stUrl,
 		isLoading,

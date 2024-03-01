@@ -9,8 +9,8 @@
 					type="url"
 					placeholder="Enter a long url here"
 					class="w-full rounded-md p-2 border-gray-100 border-2 focus:outline-1 focus:outline-gray-400"
-					:class="{ 'border-red-400 border-2': hasError }"
-					@keyup.enter="handleSubmitForm"
+					:class="{ 'border-red-400 border-2 focus:outline-red-400': hasError }"
+					autofocus
 					v-model="stUrl"
 				/>
 				<IconsWarning v-if="hasError" />

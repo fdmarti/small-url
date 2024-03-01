@@ -2,10 +2,10 @@ const characters =
 	'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 export const shortId = {
-	getRandomSmallId() {
+	getRandomSmallId(valueNumber: number = 10): string {
 		const randomCharacteres = [];
 
-		for (let i = 0; i <= 10; i++) {
+		for (let i = 0; i <= valueNumber; i++) {
 			const randomNumber = Math.floor(Math.random() * characters.length);
 			randomCharacteres.push(characters[randomNumber]);
 		}
