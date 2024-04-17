@@ -1,15 +1,26 @@
 <template>
 	<nav class="flex justify-between p-10">
 		<div>
-			<NuxtLink class="uppercase font-bold text-3xl" to="/">SmallUrl</NuxtLink>
+			<NuxtLink class="uppercase font-bold text-3xl text-slate-800 dark:text-white" to="/">SmallUrl</NuxtLink>
 		</div>
 
-		<div>
+		<div class="flex items-center gap-5">
+			<button @click="changeTheme" class="w-6">
+				<IconsSun v-if="isDark" />
+				<IconsMoon v-else />
+			</button>
 			<ul class="flex gap-5">
-				<li><NuxtLink class="hover:opacity-80" to="/">Home</NuxtLink></li>
-				<!-- <li><NuxtLink class="hover:opacity-80" to="/about">About</NuxtLink></li>
-				<li><NuxtLink class="hover:opacity-80" to="/contact">Contact</NuxtLink></li> -->
+				<li>
+					<NuxtLink class="hover:opacity-80 font-semibold dark:text-white" to="/">Home</NuxtLink>
+				</li>
 			</ul>
 		</div>
 	</nav>
 </template>
+<script lang="ts" setup>
+	import { useDark } from '../composable';
+
+	const { changeTheme, isDark, loadCurrentTheme } = useDark();
+
+	onMounted(() => loadCurrentTheme('small-url-theme'));
+</script>

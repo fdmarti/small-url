@@ -12,7 +12,7 @@
 	</div>
 </template>
 <script setup lang="ts">
-	import { useCopy } from '../composable';
+	import { useCopy } from '../../composable';
 	const { copyURI, hasCopied } = useCopy();
 
 	interface Props {

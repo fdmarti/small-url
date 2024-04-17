@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<SpinnerComponent v-if="isLoading" />
-		<section v-else class="mt-10 text-gray-800 flex flex-col gap-4">
+		<section v-else class="mt-10 text-gray-800 dark:text-gray-100 flex flex-col gap-4">
 			<div
-				class="bg-gray-100 p-4 rounded flex justify-between"
+				class="bg-gray-100 dark:bg-gray-600 p-4 rounded flex justify-between shadow"
 				v-for="url in urlsList"
 			>
-				<FullLinkComponent :fullUrl="url.fullUrl" />
-				<ShortLinkComponent :shortUrl="url.shortUrl" />
+				<LinkFullComponent :fullUrl="url.fullUrl" />
+				<LinkShortComponent :shortUrl="url.shortUrl" />
 
 				<section>
 					<IconsTrash
