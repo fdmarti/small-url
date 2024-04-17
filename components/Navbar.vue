@@ -1,5 +1,5 @@
 <template>
-	<nav class="flex justify-between p-10">
+	<nav class="flex justify-between p-10 sm:flex-row flex-col items-center gap-5 sm:gap-0">
 		<div>
 			<NuxtLink class="uppercase font-bold text-3xl text-slate-800 dark:text-white" to="/">SmallUrl</NuxtLink>
 		</div>

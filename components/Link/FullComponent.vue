@@ -12,7 +12,7 @@
 
 	const validateLongUrlLength = computed(() => {
 		if (fullUrl) {
-			return fullUrl.length > 50 ? fullUrl.slice(0, 50) + '...' : fullUrl;
+			return fullUrl.length > 40 ? fullUrl.slice(0, 50) + '...' : fullUrl;
 		}
 	});
 </script>

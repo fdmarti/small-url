@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="max-w-xl dark:bg-slate-600 bg-slate-300 mx-auto mt-16 text-gray-900 p-10 rounded-lg shadow-lg">
+		<div class="max-w-xl dark:bg-slate-600 bg-slate-300 mx-auto mt:0 sm:mt-16 text-gray-900 p-10 rounded-lg shadow-lg">
 			<form
 				class="flex flex-col gap-5 items-start relative"
 				@submit.prevent="handleSubmitForm">
